@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
 
     def index
         albums = Album.all
-        render json: albums
+        render json: AlbumSerializer.new(albums, {include: [:genre]})
     end
 
     def show
