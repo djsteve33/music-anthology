@@ -7,6 +7,6 @@ class AlbumsController < ApplicationController
 
     def show
         album = Album.find(params[:id])
-        render json: album
+        render json: AlbumSerializer.new(album, {include: [:genre]})
     end
 end
