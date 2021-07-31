@@ -7,6 +7,6 @@ class GenresController < ApplicationController
 
     def show
         genre = Genre.find(params[:id])
-        render json: GenreSerializer.new(genre, {include: [:albums]})
+        render json: GenreSerializer.new(genre)
     end
 end
