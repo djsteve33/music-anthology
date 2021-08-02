@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     genresAdapter.fetchGenres()
     albumForm.addEventListener('submit', albumsAdapter.handleFormSubmit)
     newFormButton.addEventListener('click', hideBtnLoadForm)
-    debugger
+   
 })
