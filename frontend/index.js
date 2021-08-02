@@ -1,6 +1,6 @@
 const albumForm = document.getElementById('album-form')
 const albumsAdapter = new AlbumsAdapter
-const genresAdapter = new genresAdapter
+const genresAdapter = new GenresAdapter
 const newFormButton = document.getElementById('new-form-btn')
 
 function hideBtnLoadForm(e) {
