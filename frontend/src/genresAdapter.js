@@ -18,4 +18,9 @@ class GenresAdapter {
         let gen = new GenresAdapter({id: data.id, ...data.attributes})
         gen.attachToDom()
     }
+
+    attachToDom() {
+        this.genreList.append(this.fullDisplay())
+        this.addEventListeners()
+    }
 }

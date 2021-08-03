@@ -16,6 +16,11 @@ class AlbumsAdapter{
         })
     }
 
+    attachToDom(){
+        this.albumList.append(this.fullDisplay())
+        this.addEventListeners()
+    }
+
     sendPatchRequest(albumId){
         const title = document.getElementById(`update-title-${albumId}`).value 
         const artist_name = document.getElementById(`update-artist_name-${albumId}`).value 

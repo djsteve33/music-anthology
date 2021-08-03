@@ -25,6 +25,11 @@ class Album{
         this.element.addEventListener('click', this.handleListClick)
     }
 
+    attachToDom(){
+        this.albumList.append(this.fullDisplay())
+        this.addEventListeners()
+    }
+
     fullDisplay() {
         this.element.innerHTML = `
         <li>
