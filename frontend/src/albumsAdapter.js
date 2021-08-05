@@ -12,13 +12,31 @@ class AlbumsAdapter{
             response.data.forEach(el => {
                 let album = new AlbumsAdapter(el.attributes)
                 album.attachToDom(el)
+                
             })
         })
     }
 
+    get albumList() {
+        return document.getElementById('album-list')
+    }
+    
     attachToDom(){
         this.albumList.append(this.fullDisplay())
         this.addEventListeners()
+    }
+
+    fullDisplay() {
+        this.element.innerHTML = `
+        <li>
+        $<span class="title">${this.title}</span>
+        <strong class="artist_name">${this.artist_name}</strong>
+        <span class="media_type">${this.media_type}</span>
+        </li>
+        <button class="delete" data-id="${this.id}">Delete</button>
+        <button class="update" data-id="${this.id}">Update</button>`
+
+        return this.element
     }
 
     sendPatchRequest(albumId){
