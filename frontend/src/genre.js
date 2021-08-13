@@ -54,7 +54,7 @@ class Genre {
 
         albumList.innerHTML = ""
         this.albums.forEach(i => {
-            i.attachToDom
+            i.attachToDom()
         })
 
         let seeAllBtn = document.getElementById('all-btn')
@@ -63,7 +63,9 @@ class Genre {
             seeAllBtn.id = 'all-btn'
             seeAllBtn.innerText = "See All Albums"
             this.genreList.append(seeAllBtn)
-        } 
+        } else{
+            seeAllBtn = document.getElementById('all-btn')
+        }
         seeAllBtn.addEventListener('click', this.reset)
     }
 
