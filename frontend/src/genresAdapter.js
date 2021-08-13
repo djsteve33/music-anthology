@@ -1,26 +1,26 @@
 class GenresAdapter {
     constructor() {
-        this.baseURL = 'http://localhost:3000/genres'
+        this.baseUrl = 'http://localhost:3000/genres'
     }
 
     fetchGenres() {
-        fetch(this.baseURL)
+        fetch(this.baseUrl)
         .then(res => res.json())
         .then(response => {
             //console.log(response)
-            response.data.forEach(el => {
-                this.initializeGenre(el)
+            response.data.forEach(gen => {
+                this.initializeGenre(gen)
             })
         })
     }
 
     initializeGenre(data) {
-        let gen = new GenresAdapter({id: data.id, ...data.attributes})
+        let gen = new Genre({id: data.id, ...data.attributes})
         gen.attachToDom()
     }
 
-    attachToDom() {
-        this.genreList.append(this.fullDisplay())
-        this.addEventListeners()
-    }
+    // attachToDom() {
+    //     this.genreList.append(this.fullDisplay())
+    //     this.addEventListeners()
+    // }
 }

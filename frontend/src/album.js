@@ -21,7 +21,7 @@ class Album{
         return Album.all.find(album => album.id == id)
     }
 
-    addEventListener() {
+    addEventListeners() {
         this.element.addEventListener('click', this.handleListClick)
     }
 
@@ -33,13 +33,13 @@ class Album{
     fullDisplay() {
         this.element.innerHTML = `
         <li>
-        $<span class="title">${this.title}</span>
+        <span class="title">${this.title}</span>
         <strong class="artist_name">${this.artist_name}</strong>
         <span class="media_type">${this.media_type}</span>
         </li>
         <button class="delete" data-id="${this.id}">Delete</button>
-        <button class="update" data-id="${this.id}">Update</button>`
-
+        <button class="update" data-id="${this.id}">Update</button>
+        `
         return this.element
     }
 

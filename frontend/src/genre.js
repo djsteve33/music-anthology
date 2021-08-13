@@ -53,7 +53,7 @@ class Genre {
         e.target.style.color = "red"
 
         albumList.innerHTML = ""
-        this.Albums.forEach(i => {
+        this.albums.forEach(i => {
             i.attachToDom
         })
 
@@ -63,9 +63,7 @@ class Genre {
             seeAllBtn.id = 'all-btn'
             seeAllBtn.innerText = "See All Albums"
             this.genreList.append(seeAllBtn)
-        } else{
-            seeAllBtn = document.getElementById('all-btn')
-        }
+        } 
         seeAllBtn.addEventListener('click', this.reset)
     }
 
